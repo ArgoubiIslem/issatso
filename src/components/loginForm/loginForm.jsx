@@ -1,22 +1,34 @@
 import './loginForm.css'; // Assurez-vous d'importer le bon fichier CSS avec les styles nécessaires
 import React, { useState } from 'react';
+
+import axios from 'axios';
+
 const LoginForm = () => {
   // États locaux pour suivre les valeurs des champs de saisie
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [fullName, setFullName] = useState('');
+  const [fullname, setFullName] = useState('');
   const [phoneNumber, setPhoneNumber] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
+
+  const [errors, setErrors] = useState({});
+  const [values, setValues] = useState({
+    fullname: '',
+    email: '',
+    phoneNumber: '',
+    password: '',
+  });
   // Fonction pour gérer la soumission du formulaire
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault(); // Empêche le rechargement de la page lors de la soumission du formulaire
+
     // Validation des champs de saisie
-    if (fullName.trim() === '') {
+    if (fullname.trim() === '') {
       alert('Veuillez saisir votre nom complet.');
       return;
     }
 
-    if (!/^[a-zA-Z\s]+$/.test(fullName)) {
+    if (!/^[a-zA-Z\s]+$/.test(fullname)) {
       alert('Le nom complet ne doit pas contenir de symboles.');
       return;
     }
@@ -51,10 +63,31 @@ const LoginForm = () => {
       alert('Les mots de passe ne correspondent pas.');
       return;
     }
+    try {
+      // Envoi des données au backend
+      const response = await axios.post('http://localhost:8081/', {
+        fullname,
+        email,
+        phoneNumber,
+        password,
+      });
+
+      console.log(response.data); // Afficher la réponse du serveur
+      alert('Inscription réussie !'); // Afficher un message de succès
+    } catch (error) {
+      console.error("Erreur lors de l'inscription :", error);
+      alert("Une erreur est survenue lors de l'inscription."); // Afficher un message d'erreur
+    }
 
     // Si les champs sont valides, vous pouvez effectuer l'action de connexion ici
     // Par exemple, envoyer une requête au serveur pour vérifier les informations d'identification
-    console.log('Connexion en cours avec :', { email, password });
+    // eslint-disable-next-line no-undef
+    console.log('Connexion en cours avec :', {
+      email,
+      password,
+      phoneNumber,
+      fullname,
+    });
   };
 
   return (
@@ -143,7 +176,8 @@ const LoginForm = () => {
                             type="text"
                             className="form-style"
                             placeholder="Full Name"
-                            value={fullName}
+                            name="fullname"
+                            value={fullname}
                             onChange={(e) => setFullName(e.target.value)}
                           />
                           <i className="input-icon uil uil-user"></i>
@@ -152,6 +186,7 @@ const LoginForm = () => {
                           <input
                             type="tel"
                             className="form-style"
+                            name="phoneNumber"
                             placeholder="Phone Number"
                             value={phoneNumber}
                             onChange={(e) => setPhoneNumber(e.target.value)}
@@ -161,6 +196,7 @@ const LoginForm = () => {
                         <div className="form-group mt-2">
                           <input
                             type="email"
+                            name="email"
                             className="form-style"
                             placeholder="Email"
                             value={email}
@@ -171,6 +207,7 @@ const LoginForm = () => {
                         <div className="form-group mt-2">
                           <input
                             type="password"
+                            name="password"
                             className="form-style"
                             placeholder="Password"
                             value={password}
