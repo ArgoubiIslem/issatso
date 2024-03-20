@@ -64,12 +64,13 @@ const LoginForm = () => {
       return;
     }
     try {
-      // Envoi des données au backend
+      // Envoi des données au backend pour l'inscription
       const response = await axios.post('http://localhost:8081/', {
         fullname,
         email,
         phoneNumber,
         password,
+        action: 'register', // Spécifiez l'action comme inscription
       });
 
       console.log(response.data); // Afficher la réponse du serveur
@@ -78,16 +79,40 @@ const LoginForm = () => {
       console.error("Erreur lors de l'inscription :", error);
       alert("Une erreur est survenue lors de l'inscription."); // Afficher un message d'erreur
     }
+  };
+  const handleSubmit2 = async (e) => {
+    e.preventDefault(); // Empêche le rechargement de la page lors de la soumission du formulaire
 
-    // Si les champs sont valides, vous pouvez effectuer l'action de connexion ici
-    // Par exemple, envoyer une requête au serveur pour vérifier les informations d'identification
-    // eslint-disable-next-line no-undef
-    console.log('Connexion en cours avec :', {
-      email,
-      password,
-      phoneNumber,
-      fullname,
-    });
+    // Validation des champs de saisie
+    if (email.trim() === '') {
+      alert('Veuillez saisir votre adresse e-mail.');
+      return;
+    }
+
+    if (!email.includes('@')) {
+      alert('Veuillez saisir une adresse e-mail valide.');
+      return;
+    }
+
+    if (password.trim() === '') {
+      alert('Veuillez saisir votre mot de passe.');
+      return;
+    }
+
+    try {
+      // Envoi des données au backend avec l'action 'login'
+      const response = await axios.post('http://localhost:8081/', {
+        email,
+        password,
+        action: 'login', // Ajout de l'attribut 'action' avec la valeur 'login'
+      });
+
+      console.log(response.data); // Afficher la réponse du serveur
+      alert('Connexion réussie !'); // Afficher un message de succès
+    } catch (error) {
+      console.error('Erreur lors de la connexion :', error);
+      alert('Une erreur est survenue lors de la connexion.'); // Afficher un message d'erreur
+    }
   };
 
   return (
@@ -112,12 +137,13 @@ const LoginForm = () => {
                   <div className="center-wrap">
                     <div className="section text-center">
                       <h4 className="mb-4 pb-3">Log In</h4>
-                      <form onSubmit={handleSubmit}>
+                      <form onSubmit={handleSubmit2}>
                         <div className="form-group">
                           <input
                             type="email"
                             className="form-style"
                             placeholder="Email"
+                            name="email"
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
                           />
@@ -129,6 +155,7 @@ const LoginForm = () => {
                             className="form-style"
                             placeholder="Password"
                             value={password}
+                            name="password"
                             onChange={(e) => setPassword(e.target.value)}
                           />
                           <i className="input-icon uil uil-lock-alt"></i>
