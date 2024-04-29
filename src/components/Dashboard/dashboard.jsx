@@ -337,119 +337,183 @@ function Dashboard() {
               </button>
             </div>
           </div>
-          <div className="products-area-wrapper tableView">
-            <div className="products-header">
-              <div className="product-cell image">
-                Code
-                <button className="sort-button">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    viewBox="0 0 512 512"
-                  >
-                    <path
-                      fill="currentColor"
-                      d="M496.1 138.3L375.7 17.9c-7.9-7.9-20.6-7.9-28.5 0L226.9 138.3c-7.9 7.9-7.9 20.6 0 28.5 7.9 7.9 20.6 7.9 28.5 0l85.7-85.7v352.8c0 11.3 9.1 20.4 20.4 20.4 11.3 0 20.4-9.1 20.4-20.4V81.1l85.7 85.7c7.9 7.9 20.6 7.9 28.5 0 7.9-7.8 7.9-20.6 0-28.5zM287.1 347.2c-7.9-7.9-20.6-7.9-28.5 0l-85.7 85.7V80.1c0-11.3-9.1-20.4-20.4-20.4-11.3 0-20.4 9.1-20.4 20.4v352.8l-85.7-85.7c-7.9-7.9-20.6-7.9-28.5 0-7.9 7.9-7.9 20.6 0 28.5l120.4 120.4c7.9 7.9 20.6 7.9 28.5 0l120.4-120.4c7.8-7.9 7.8-20.7-.1-28.5z"
-                    />
-                  </svg>
-                </button>
-              </div>
-              <div className="product-cell category">
-                Titre
-                <button className="sort-button">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    viewBox="0 0 512 512"
-                  >
-                    <path
-                      fill="currentColor"
-                      d="M496.1 138.3L375.7 17.9c-7.9-7.9-20.6-7.9-28.5 0L226.9 138.3c-7.9 7.9-7.9 20.6 0 28.5 7.9 7.9 20.6 7.9 28.5 0l85.7-85.7v352.8c0 11.3 9.1 20.4 20.4 20.4 11.3 0 20.4-9.1 20.4-20.4V81.1l85.7 85.7c7.9 7.9 20.6 7.9 28.5 0 7.9-7.8 7.9-20.6 0-28.5zM287.1 347.2c-7.9-7.9-20.6-7.9-28.5 0l-85.7 85.7V80.1c0-11.3-9.1-20.4-20.4-20.4-11.3 0-20.4 9.1-20.4 20.4v352.8l-85.7-85.7c-7.9-7.9-20.6-7.9-28.5 0-7.9 7.9-7.9 20.6 0 28.5l120.4 120.4c7.9 7.9 20.6 7.9 28.5 0l120.4-120.4c7.8-7.9 7.8-20.7-.1-28.5z"
-                    />
-                  </svg>
-                </button>
-              </div>
-              <div className="product-cell status-cell">
-                Description
-                <button className="sort-button">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    viewBox="0 0 512 512"
-                  >
-                    <path
-                      fill="currentColor"
-                      d="M496.1 138.3L375.7 17.9c-7.9-7.9-20.6-7.9-28.5 0L226.9 138.3c-7.9 7.9-7.9 20.6 0 28.5 7.9 7.9 20.6 7.9 28.5 0l85.7-85.7v352.8c0 11.3 9.1 20.4 20.4 20.4 11.3 0 20.4-9.1 20.4-20.4V81.1l85.7 85.7c7.9 7.9 20.6 7.9 28.5 0 7.9-7.8 7.9-20.6 0-28.5zM287.1 347.2c-7.9-7.9-20.6-7.9-28.5 0l-85.7 85.7V80.1c0-11.3-9.1-20.4-20.4-20.4-11.3 0-20.4 9.1-20.4 20.4v352.8l-85.7-85.7c-7.9-7.9-20.6-7.9-28.5 0-7.9 7.9-7.9 20.6 0 28.5l120.4 120.4c7.9 7.9 20.6 7.9 28.5 0l120.4-120.4c7.8-7.9 7.8-20.7-.1-28.5z"
-                    />
-                  </svg>
-                </button>
-              </div>
-              <div className="product-cell sales">
-                Document
-                <button className="sort-button">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    viewBox="0 0 512 512"
-                  >
-                    <path
-                      fill="currentColor"
-                      d="M496.1 138.3L375.7 17.9c-7.9-7.9-20.6-7.9-28.5 0L226.9 138.3c-7.9 7.9-7.9 20.6 0 28.5 7.9 7.9 20.6 7.9 28.5 0l85.7-85.7v352.8c0 11.3 9.1 20.4 20.4 20.4 11.3 0 20.4-9.1 20.4-20.4V81.1l85.7 85.7c7.9 7.9 20.6 7.9 28.5 0 7.9-7.8 7.9-20.6 0-28.5zM287.1 347.2c-7.9-7.9-20.6-7.9-28.5 0l-85.7 85.7V80.1c0-11.3-9.1-20.4-20.4-20.4-11.3 0-20.4 9.1-20.4 20.4v352.8l-85.7-85.7c-7.9-7.9-20.6-7.9-28.5 0-7.9 7.9-7.9 20.6 0 28.5l120.4 120.4c7.9 7.9 20.6 7.9 28.5 0l120.4-120.4c7.8-7.9 7.8-20.7-.1-28.5z"
-                    />
-                  </svg>
-                </button>
-              </div>
-              <div className="product-cell stock">
-                Date
-                <button className="sort-button">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    viewBox="0 0 512 512"
-                  >
-                    <path
-                      fill="currentColor"
-                      d="M496.1 138.3L375.7 17.9c-7.9-7.9-20.6-7.9-28.5 0L226.9 138.3c-7.9 7.9-7.9 20.6 0 28.5 7.9 7.9 20.6 7.9 28.5 0l85.7-85.7v352.8c0 11.3 9.1 20.4 20.4 20.4 11.3 0 20.4-9.1 20.4-20.4V81.1l85.7 85.7c7.9 7.9 20.6 7.9 28.5 0 7.9-7.8 7.9-20.6 0-28.5zM287.1 347.2c-7.9-7.9-20.6-7.9-28.5 0l-85.7 85.7V80.1c0-11.3-9.1-20.4-20.4-20.4-11.3 0-20.4 9.1-20.4 20.4v352.8l-85.7-85.7c-7.9-7.9-20.6-7.9-28.5 0-7.9 7.9-7.9 20.6 0 28.5l120.4 120.4c7.9 7.9 20.6 7.9 28.5 0l120.4-120.4c7.8-7.9 7.8-20.7-.1-28.5z"
-                    />
-                  </svg>
-                </button>
-              </div>
-              <div className="product-cell price"></div>
-            </div>
-            {cours.map((cour, i) => (
-              <div className="products-row" key={i}>
-                <div className="product-cell image">
-                  <img
-                    src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
-                    alt="product"
-                  />
-                  <span>{cour.code}</span>
-                </div>
-                <div className="product-cell category">
-                  <span className="cell-label">Titre:</span>
-                  {cour.titre}
-                </div>
-                <div className="product-cell status-cell">
-                  <span className="cell-label">Description:</span>
-                  <span className="status active">{cour.description}</span>
-                </div>
-                <div className="product-cell sales"></div>
-                <div className="product-cell stock">
-                  <span className="cell-label">document:</span>
-                  {cour.document}
-                </div>
-                <div className="product-cell price">
-                  <span className="cell-label">Date:</span>
-                  {cour.date}
-                </div>
-              </div>
-            ))}
-          </div>
+          <table className="products-area-wrapper tableView">
+            <thead>
+              <tr>
+                <th>
+                  <div className="product-cell status-cell">
+                    Code
+                    <button className="sort-button">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        viewBox="0 0 512 512"
+                      >
+                        <path
+                          fill="currentColor"
+                          d="M496.1 138.3L375.7 17.9c-7.9-7.9-20.6-7.9-28.5 0L226.9 138.3c-7.9 7.9-7.9 20.6 0 28.5 7.9 7.9 20.6 7.9 28.5 0l85.7-85.7v352.8c0 11.3 9.1 20.4 20.4 20.4 11.3 0 20.4-9.1 20.4-20.4V81.1l85.7 85.7c7.9 7.9 20.6 7.9 28.5 0 7.9-7.8 7.9-20.6 0-28.5zM287.1 347.2c-7.9-7.9-20.6-7.9-28.5 0l-85.7 85.7V80.1c0-11.3-9.1-20.4-20.4-20.4-11.3 0-20.4 9.1-20.4 20.4v352.8l-85.7-85.7c-7.9-7.9-20.6-7.9-28.5 0-7.9 7.9-7.9 20.6 0 28.5l120.4 120.4c7.9 7.9 20.6 7.9 28.5 0l120.4-120.4c7.8-7.9 7.8-20.7-.1-28.5z"
+                        />
+                      </svg>
+                    </button>
+                  </div>{' '}
+                </th>
+                <th>
+                  <div className="product-cell category">
+                    Titre
+                    <button className="sort-button">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        viewBox="0 0 512 512"
+                      >
+                        <path
+                          fill="currentColor"
+                          d="M496.1 138.3L375.7 17.9c-7.9-7.9-20.6-7.9-28.5 0L226.9 138.3c-7.9 7.9-7.9 20.6 0 28.5 7.9 7.9 20.6 7.9 28.5 0l85.7-85.7v352.8c0 11.3 9.1 20.4 20.4 20.4 11.3 0 20.4-9.1 20.4-20.4V81.1l85.7 85.7c7.9 7.9 20.6 7.9 28.5 0 7.9-7.8 7.9-20.6 0-28.5zM287.1 347.2c-7.9-7.9-20.6-7.9-28.5 0l-85.7 85.7V80.1c0-11.3-9.1-20.4-20.4-20.4-11.3 0-20.4 9.1-20.4 20.4v352.8l-85.7-85.7c-7.9-7.9-20.6-7.9-28.5 0-7.9 7.9-7.9 20.6 0 28.5l120.4 120.4c7.9 7.9 20.6 7.9 28.5 0l120.4-120.4c7.8-7.9 7.8-20.7-.1-28.5z"
+                        />
+                      </svg>
+                    </button>
+                  </div>
+                </th>
+                <th>
+                  <div className="product-cell status-cell">
+                    Description
+                    <button className="sort-button">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        viewBox="0 0 512 512"
+                      >
+                        <path
+                          fill="currentColor"
+                          d="M496.1 138.3L375.7 17.9c-7.9-7.9-20.6-7.9-28.5 0L226.9 138.3c-7.9 7.9-7.9 20.6 0 28.5 7.9 7.9 20.6 7.9 28.5 0l85.7-85.7v352.8c0 11.3 9.1 20.4 20.4 20.4 11.3 0 20.4-9.1 20.4-20.4V81.1l85.7 85.7c7.9 7.9 20.6 7.9 28.5 0 7.9-7.8 7.9-20.6 0-28.5zM287.1 347.2c-7.9-7.9-20.6-7.9-28.5 0l-85.7 85.7V80.1c0-11.3-9.1-20.4-20.4-20.4-11.3 0-20.4 9.1-20.4 20.4v352.8l-85.7-85.7c-7.9-7.9-20.6-7.9-28.5 0-7.9 7.9-7.9 20.6 0 28.5l120.4 120.4c7.9 7.9 20.6 7.9 28.5 0l120.4-120.4c7.8-7.9 7.8-20.7-.1-28.5z"
+                        />
+                      </svg>
+                    </button>
+                  </div>
+                </th>
+                <th>
+                  {' '}
+                  <div className="product-cell sales">
+                    Document
+                    <button className="sort-button">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        viewBox="0 0 512 512"
+                      >
+                        <path
+                          fill="currentColor"
+                          d="M496.1 138.3L375.7 17.9c-7.9-7.9-20.6-7.9-28.5 0L226.9 138.3c-7.9 7.9-7.9 20.6 0 28.5 7.9 7.9 20.6 7.9 28.5 0l85.7-85.7v352.8c0 11.3 9.1 20.4 20.4 20.4 11.3 0 20.4-9.1 20.4-20.4V81.1l85.7 85.7c7.9 7.9 20.6 7.9 28.5 0 7.9-7.8 7.9-20.6 0-28.5zM287.1 347.2c-7.9-7.9-20.6-7.9-28.5 0l-85.7 85.7V80.1c0-11.3-9.1-20.4-20.4-20.4-11.3 0-20.4 9.1-20.4 20.4v352.8l-85.7-85.7c-7.9-7.9-20.6-7.9-28.5 0-7.9 7.9-7.9 20.6 0 28.5l120.4 120.4c7.9 7.9 20.6 7.9 28.5 0l120.4-120.4c7.8-7.9 7.8-20.7-.1-28.5z"
+                        />
+                      </svg>
+                    </button>
+                  </div>
+                </th>
+                <th>
+                  <div className="product-cell stock">
+                    Date
+                    <button className="sort-button">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        viewBox="0 0 512 512"
+                      >
+                        <path
+                          fill="currentColor"
+                          d="M496.1 138.3L375.7 17.9c-7.9-7.9-20.6-7.9-28.5 0L226.9 138.3c-7.9 7.9-7.9 20.6 0 28.5 7.9 7.9 20.6 7.9 28.5 0l85.7-85.7v352.8c0 11.3 9.1 20.4 20.4 20.4 11.3 0 20.4-9.1 20.4-20.4V81.1l85.7 85.7c7.9 7.9 20.6 7.9 28.5 0 7.9-7.8 7.9-20.6 0-28.5zM287.1 347.2c-7.9-7.9-20.6-7.9-28.5 0l-85.7 85.7V80.1c0-11.3-9.1-20.4-20.4-20.4-11.3 0-20.4 9.1-20.4 20.4v352.8l-85.7-85.7c-7.9-7.9-20.6-7.9-28.5 0-7.9 7.9-7.9 20.6 0 28.5l120.4 120.4c7.9 7.9 20.6 7.9 28.5 0l120.4-120.4c7.8-7.9 7.8-20.7-.1-28.5z"
+                        />
+                      </svg>
+                    </button>
+                  </div>
+                </th>
+                <th>
+                  <div className="product-cell stock">Actions</div>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {cours.map((cour, i) => (
+                <tr key={i}>
+                  <td>
+                    <div className="product-cell image">
+                      <img
+                        src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
+                        alt="product"
+                      />
+                      <span>{cour.code}</span>
+                    </div>
+                  </td>
+                  <td>
+                    <div className="product-cell category">
+                      <span className="cell-label">Titre:</span>
+                      {cour.titre}
+                    </div>
+                  </td>
+                  <td>
+                    <div className="product-cell status-cell">
+                      <span className="cell-label">Description:</span>
+                      <span>{cour.description}</span>
+                    </div>
+                  </td>
+                  <td>
+                    <div className="product-cell stock">
+                      <span className="cell-label">Document:</span>
+                      {cour.document}
+                    </div>
+                  </td>
+                  <td>
+                    <div className="product-cell price">
+                      <span className="cell-label">Date:</span>
+                      {cour.date}
+                    </div>
+                  </td>
+                  <td>
+                    <div className="product-cell ">
+                      <button
+                        className="btn btn-danger ms-2"
+                        onclick="handleDelete()"
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="16"
+                          height="16"
+                          fill="currentColor"
+                          class="bi bi-trash"
+                          viewBox="0 0 16 16"
+                        >
+                          <path d="M3.5 5.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9zm1-1a1.5 1.5 0 0 0-1.5 1.5v9A1.5 1.5 0 0 0 4 15.5h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 12 4.5h-1V3a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v1h-1a1.5 1.5 0 0 0-1.5 1.5zM2.854 5.146a.5.5 0 1 1 .708-.708L4 6.793l1.438-1.439a.5.5 0 1 1 .708.708L4.707 7l1.439 1.438a.5.5 0 0 1-.708.708L4 7.707l-1.438 1.439a.5.5 0 0 1-.708-.708L3.293 7 1.854 5.562a.5.5 0 0 1 .708-.708L4 5.293l1.438-1.439a.5.5 0 0 1 .708.708L4.707 5l1.439 1.438a.5.5 0 0 1-.708.708L4 5.707l-1.438 1.439a.5.5 0 0 1-.708-.708L3.293 5.5l-1.439-1.438a.5.5 0 0 1 .708-.708L4 4.293l1.438-1.439a.5.5 0 0 1 .708.708L4.707 5l1.439 1.438a.5.5 0 0 1-.708.708L4 5.707l-1.439-1.439a.5.5 0 0 1-.707-.708z" />
+                        </svg>
+                      </button>
+
+                      <button
+                        className="btn btn-danger ms-2"
+                        onclick="handleEdit()"
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="16"
+                          height="16"
+                          fill="currentColor"
+                          class="bi bi-pencil-square"
+                          viewBox="0 0 16 16"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            d="M11.854 0a1 1 0 0 1 .853.146l2.793 2.793a1 1 0 0 1 .293.707V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h8.5a1 1 0 0 1 .707.293l2.793 2.793A1 1 0 0 1 15 5.207V3a1 1 0 0 1-1-1V.5a.5.5 0 0 1 .5-.5zM12 2.414L13.586 4H12V2.414zM2 5v2h2L4 5H2zm2 0v.586L3.414 7H2V5h2zm10-3.5L12.5 1H3v12h9V1.5zM11 11H3V9h8v2zm0-3H3V6h8v2z"
+                          />
+                        </svg>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
       </div>
       {isModalOpen && (
