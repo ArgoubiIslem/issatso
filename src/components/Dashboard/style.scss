@@ -43,9 +43,7 @@
   width: 600px;
 }
 
-.modal-content {
-  /* Styles pour le contenu de la modal */
-}
+
 
 .modal-close {
   background-color: #ccc;
@@ -758,6 +756,39 @@ body {
   
   .cell-label { opacity: 0.6; }
 }
+// button sup et modif
+.custom-button {
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.delete-button {
+  background-color: #dc3545; /* Couleur de fond pour Supprimer */
+  color: white; /* Couleur du texte pour Supprimer */
+  margin-right: 8px;
+}
+
+.edit-button {
+  background-color: #007bff; /* Couleur de fond pour Modifier */
+  color: white; /* Couleur du texte pour Modifier */
+  margin-right: 8px;
+}
+
+.custom-button svg {
+  margin-right: 8px; /* Marge à droite pour l'icône SVG */
+}
+
+
+
+
+
+
 
 
 

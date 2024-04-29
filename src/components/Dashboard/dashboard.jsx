@@ -6,6 +6,7 @@ function Dashboard() {
   const [isLightMode, setIsLightMode] = useState(false);
   const [cours, setCours] = useState([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isModalOpen2, setIsModalOpen2] = useState(false);
   const [titre, setTitre] = useState('');
   const [code, setCode] = useState('');
   const [description, setDescription] = useState('');
@@ -20,7 +21,14 @@ function Dashboard() {
   const closeModal = () => {
     setIsModalOpen(false);
   };
+  const openModal2 = () => {
+    setIsModalOpen2(true);
+  };
 
+  // Fonction pour fermer la modale
+  const closeModal2 = () => {
+    setIsModalOpen2(false);
+  };
   useEffect(() => {
     axios
       .get('http://localhost:8083/cours')
@@ -34,13 +42,14 @@ function Dashboard() {
   };
 
   /*useEffect(() => {
+    
+  });
+  useEffect(() => {
     var modeSwitch = document.querySelector('.mode-switch');
     modeSwitch.addEventListener('click', function () {
       document.documentElement.classList.toggle('light');
       modeSwitch.classList.toggle('active');
     });
-  });
-  useEffect(() => {
     document.querySelector('.jsFilter').addEventListener('click', function () {
       document.querySelector('.filter-menu').classList.toggle('active');
     });
@@ -250,7 +259,7 @@ function Dashboard() {
                 <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
               </svg>
             </button>
-            <button className="app-content-headerButton" onClick={openModal}>
+            <button className="app-content-headerButton" onClick={openModal2}>
               Ajouter cours
             </button>
           </div>
@@ -474,38 +483,41 @@ function Dashboard() {
                   </td>
                   <td>
                     <div className="product-cell ">
-                      <button
-                        className="btn btn-danger ms-2"
-                        onclick="handleDelete()"
-                      >
+                      {/* Bouton Supprimer */}
+                      <button className="custom-button delete-button">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
-                          width="16"
-                          height="16"
-                          fill="currentColor"
-                          class="bi bi-trash"
-                          viewBox="0 0 16 16"
+                          x="0px"
+                          y="0px"
+                          width="25"
+                          height="25"
+                          viewBox="0,0,256,256"
                         >
-                          <path d="M3.5 5.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9zm1-1a1.5 1.5 0 0 0-1.5 1.5v9A1.5 1.5 0 0 0 4 15.5h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 12 4.5h-1V3a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v1h-1a1.5 1.5 0 0 0-1.5 1.5zM2.854 5.146a.5.5 0 1 1 .708-.708L4 6.793l1.438-1.439a.5.5 0 1 1 .708.708L4.707 7l1.439 1.438a.5.5 0 0 1-.708.708L4 7.707l-1.438 1.439a.5.5 0 0 1-.708-.708L3.293 7 1.854 5.562a.5.5 0 0 1 .708-.708L4 5.293l1.438-1.439a.5.5 0 0 1 .708.708L4.707 5l1.439 1.438a.5.5 0 0 1-.708.708L4 5.707l-1.438 1.439a.5.5 0 0 1-.708-.708L3.293 5.5l-1.439-1.438a.5.5 0 0 1 .708-.708L4 4.293l1.438-1.439a.5.5 0 0 1 .708.708L4.707 5l1.439 1.438a.5.5 0 0 1-.708.708L4 5.707l-1.439-1.439a.5.5 0 0 1-.707-.708z" />
+                          <g fill="#faf5f5">
+                            <g transform="scale(5.33333,5.33333)">
+                              <path d="M20.5,4c-0.49034,-0.00628 -0.95279,0.22749 -1.23848,0.62606c-0.28569,0.39856 -0.35854,0.9116 -0.19511,1.37394h-4.42578c-1.83725,0 -3.5577,0.91945 -4.57617,2.44922l-2.36719,3.55078h-0.19727c-0.54095,-0.00765 -1.04412,0.27656 -1.31683,0.74381c-0.27271,0.46725 -0.27271,1.04514 0,1.51238c0.27271,0.46725 0.77588,0.75146 1.31683,0.74381h0.76367c0.12867,0.01945 0.25932,0.02208 0.38867,0.00781l2.47266,23.07813c0.29835,2.78234 2.67084,4.91406 5.46875,4.91406h14.81055c2.79791,0 5.1704,-2.13172 5.46875,-4.91406l2.47461,-23.07813c0.12677,0.01359 0.25475,0.01097 0.38086,-0.00781h0.77148c0.54095,0.00765 1.04412,-0.27656 1.31683,-0.74381c0.27271,-0.46725 0.27271,-1.04514 0,-1.51238c-0.27271,-0.46725 -0.77588,-0.75146 -1.31683,-0.74381h-0.19727l-2.36719,-3.55078c-1.01929,-1.52894 -2.73955,-2.44922 -4.57617,-2.44922h-4.42578c0.16343,-0.46234 0.09058,-0.97538 -0.19511,-1.37394c-0.28569,-0.39856 -0.74814,-0.63234 -1.23848,-0.62606zM14.64063,9h18.71875c0.83737,0 1.61537,0.41622 2.08008,1.11328l1.25781,1.88672h-25.39453l1.25781,-1.88672c0.00065,-0.00065 0.0013,-0.0013 0.00195,-0.00195c0.46348,-0.69619 1.23938,-1.11133 2.07813,-1.11133zM11.66992,15h24.66016l-2.43945,22.76563c-0.13765,1.28366 -1.19624,2.23438 -2.48633,2.23438h-14.81055c-1.29009,0 -2.34673,-0.95071 -2.48437,-2.23437z"></path>
+                            </g>
+                          </g>
                         </svg>
                       </button>
-
+                      {/* Bouton Modifier */}
                       <button
-                        className="btn btn-danger ms-2"
-                        onclick="handleEdit()"
+                        className="custom-button edit-button"
+                        onClick={openModal2}
                       >
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
-                          width="16"
-                          height="16"
-                          fill="currentColor"
-                          class="bi bi-pencil-square"
-                          viewBox="0 0 16 16"
+                          x="0px"
+                          y="0px"
+                          width="25"
+                          height="25"
+                          viewBox="0,0,300,150"
                         >
-                          <path
-                            fill-rule="evenodd"
-                            d="M11.854 0a1 1 0 0 1 .853.146l2.793 2.793a1 1 0 0 1 .293.707V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h8.5a1 1 0 0 1 .707.293l2.793 2.793A1 1 0 0 1 15 5.207V3a1 1 0 0 1-1-1V.5a.5.5 0 0 1 .5-.5zM12 2.414L13.586 4H12V2.414zM2 5v2h2L4 5H2zm2 0v.586L3.414 7H2V5h2zm10-3.5L12.5 1H3v12h9V1.5zM11 11H3V9h8v2zm0-3H3V6h8v2z"
-                          />
+                          <g fill="#fffbfb">
+                            <g transform="scale(5.12,5.12)">
+                              <path d="M43.05078,1.97461c-1.25,0 -2.50117,0.47578 -3.45117,1.42578l-0.79883,0.79883l6.89844,6.90039l0.80078,-0.79883c1.9,-1.9 1.9,-5.00039 0,-6.90039c-0.95,-0.95 -2.19922,-1.42578 -3.44922,-1.42578zM37.48242,6.08984c-0.2598,0.00774 -0.50638,0.11632 -0.6875,0.30273l-32.5,32.39844c-0.12561,0.12459 -0.21592,0.28028 -0.26172,0.45117l-2,7.5c-0.09232,0.34503 0.00638,0.71311 0.25894,0.96567c0.25256,0.25256 0.62064,0.35126 0.96567,0.25894l7.5,-2c0.17089,-0.0458 0.32658,-0.13611 0.45117,-0.26172l32.39844,-32.5c0.27003,-0.24913 0.38172,-0.62626 0.29091,-0.98226c-0.09081,-0.356 -0.36951,-0.63354 -0.72588,-0.72288c-0.35637,-0.08934 -0.73304,0.02392 -0.98104,0.29498l-32.19922,32.29883l-4.08594,-4.08594l32.29883,-32.19922c0.29665,-0.28678 0.38672,-0.7263 0.2268,-1.10666c-0.15992,-0.38035 -0.53701,-0.62345 -0.94946,-0.61209z"></path>
+                            </g>
+                          </g>
                         </svg>
                       </button>
                     </div>
@@ -551,12 +563,58 @@ function Dashboard() {
                   onChange={(e) => setDocument(e.target.value)}
                 />
                 <br></br>
-
+                <br></br>
                 <button type="submit">Enregistrer</button>
               </form>
             </div>
             {/* Bouton pour fermer la modal */}
             <button className="modal-close" onClick={closeModal}>
+              Fermer
+            </button>
+          </div>
+        </div>
+      )}
+      {isModalOpen2 && (
+        <div className="modal-overlay">
+          <div className="modal-container">
+            {/* Contenu de votre modale (formulaire, etc.) */}
+            <div className="modal-content">
+              <h2 className="titre">Modifier un cours</h2>
+              <form className="form" onSubmit={handleSubmit}>
+                <label className="titre">Code:</label>
+                <input
+                  type="text"
+                  placeholder="saisir code"
+                  onChange={(e) => setCode(e.target.value)}
+                />
+                <br></br>
+                <label className="titre">Titre:</label>
+                <input
+                  type="text"
+                  placeholder="saisir titre"
+                  onChange={(e) => setTitre(e.target.value)}
+                />
+                <br></br>
+                <label className="titre">Description:</label>
+                <textarea
+                  type="text"
+                  placeholder="saisir description"
+                  onChange={(e) => setDescription(e.target.value)}
+                />
+                <br></br>
+                <label className="titre">document:</label>
+                <input
+                  type="file"
+                  className="titre"
+                  onChange={(e) => setDocument(e.target.value)}
+                />
+                <br></br>
+                <br></br>
+                <button type="submit">Enregistrer</button>
+              </form>
+            </div>
+            {/* Bouton pour fermer la modal */}
+            <button className="modal-close" onClick={closeModal2}>
               Fermer
             </button>
           </div>
