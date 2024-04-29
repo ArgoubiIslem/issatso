@@ -7,6 +7,13 @@ function Dashboard() {
     setIsLightMode((prevMode) => !prevMode);
   };
   useEffect(() => {
+    var modeSwitch = document.querySelector('.mode-switch');
+    modeSwitch.addEventListener('click', function () {
+      document.documentElement.classList.toggle('light');
+      modeSwitch.classList.toggle('active');
+    });
+  });
+  useEffect(() => {
     document.querySelector('.jsFilter').addEventListener('click', function () {
       document.querySelector('.filter-menu').classList.toggle('active');
     });
@@ -31,12 +38,6 @@ function Dashboard() {
       document
         .querySelector('.products-area-wrapper')
         .classList.add('tableView');
-    });
-
-    var modeSwitch = document.querySelector('.mode-switch');
-    modeSwitch.addEventListener('click', function () {
-      document.documentElement.classList.toggle('light');
-      modeSwitch.classList.toggle('active');
     });
   }, []);
 
@@ -93,7 +94,7 @@ function Dashboard() {
                   <line x1="3" y1="6" x2="21" y2="6" />
                   <path d="M16 10a4 4 0 0 1-8 0" />
                 </svg>
-                <span>Products</span>
+                <span>Cours</span>
               </a>
             </li>
             <li className="sidebar-list-item">
@@ -187,7 +188,7 @@ function Dashboard() {
         </div>
         <div className="app-content">
           <div className="app-content-header">
-            <h1 className="app-content-headerText">Products</h1>
+            <h1 className="app-content-headerText">Cours</h1>
             <button
               className={`mode-switch ${isLightMode ? 'active' : ''}`}
               title="Switch Theme"
@@ -207,7 +208,7 @@ function Dashboard() {
                 <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
               </svg>
             </button>
-            <button className="app-content-headerButton">Add Product</button>
+            <button className="app-content-headerButton">Ajouter cours</button>
           </div>
           <div className="app-content-actions">
             <input className="search-bar" placeholder="Search..." type="text" />
