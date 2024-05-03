@@ -6,6 +6,7 @@ function Dashboard() {
   const [isLightMode, setIsLightMode] = useState(false);
   const [cours, setCours] = useState([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
+
   const [isModalOpen2, setIsModalOpen2] = useState(false);
   const [titre, setTitre] = useState('');
   const [code, setCode] = useState('');
@@ -21,6 +22,7 @@ function Dashboard() {
   const closeModal = () => {
     setIsModalOpen(false);
   };
+
   const openModal2 = () => {
     setIsModalOpen2(true);
   };
@@ -165,7 +167,7 @@ function Dashboard() {
                   <path d="M21.21 15.89A10 10 0 1 1 8 2.83" />
                   <path d="M22 12A10 10 0 0 0 12 2v10z" />
                 </svg>
-                <span>Statistics</span>
+                <span>Examens</span>
               </a>
             </li>
             <li className="sidebar-list-item">
@@ -237,6 +239,7 @@ function Dashboard() {
             </button>
           </div>
         </div>
+
         <div className="app-content">
           <div className="app-content-header">
             <h1 className="app-content-headerText">Cours</h1>
@@ -574,6 +577,7 @@ function Dashboard() {
           </div>
         </div>
       )}
+
       {isModalOpen2 && (
         <div className="modal-overlay">
           <div className="modal-container">

@@ -1,7 +1,8 @@
 import './loginForm.css'; // Assurez-vous d'importer le bon fichier CSS avec les styles nécessaires
 import React, { useState } from 'react';
-import Dashboard from '../Dashboard/dashboard';
+
 import axios from 'axios';
+import Examen from '../Dashboard/Examens/Examen';
 
 const LoginForm = () => {
   // États locaux pour suivre les valeurs des champs de saisie
@@ -121,7 +122,7 @@ const LoginForm = () => {
     <div>
       {loggedIn ? (
         // Si l'utilisateur est connecté, affichez le composant Dashboard
-        <Dashboard />
+        <Examen />
       ) : (
         // Sinon, affichez le formulaire de connexion
         <div className="container">
